@@ -1,18 +1,9 @@
 export default function Questions(props) {
-  function randomNoRepeats(array) {
-    let copy = array.slice(0);
-    return function () {
-      if (copy.length < 1) {
-        copy = array.slice(0);
-      }
-      let index = Math.floor(Math.random() * copy.length);
-      let item = copy[index];
-      copy.splice(index, 1);
-      return item;
-    };
-  }
-
-  const chooser = randomNoRepeats([...props.incorrect, props.correct]);
+  const answers = [...props.incorrect, props.correct];
+  let shuffled = answers
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
 
   return (
     <div className="question-container">
@@ -23,33 +14,45 @@ export default function Questions(props) {
           .replace(/&eacute;/g, 'é')}
       </h2>
       <div className="answers">
-        <div>
-          {chooser()
+        <input type="radio" name={props.state} value={shuffled[0]} />
+        <label htmlFor={shuffled[0]}>
+          {shuffled[0]
             .replace(/&quot;/g, '"')
             .replace(/&#039;/g, '´')
             .replace(/&eacute;/g, 'é')}
-        </div>
-        <div>
-          {chooser()
+        </label>
+
+        <input type="radio" name={props.state} value={shuffled[1]} />
+        <label htmlFor={shuffled[1]}>
+          {shuffled[1]
             .replace(/&quot;/g, '"')
             .replace(/&#039;/g, '´')
             .replace(/&eacute;/g, 'é')}
-        </div>
-        <div>
-          {chooser()
-            .replace(/&quot;/g, '"')
-            .replace(/&#039;/g, '´')
-            .replace(/&eacute;/g, 'é')}
-        </div>
-        <div>
-          {chooser()
-            .replace(/&quot;/g, '"')
-            .replace(/&#039;/g, '´')
-            .replace(/&eacute;/g, 'é')}
-        </div>
+        </label>
+
+        {shuffled[2] && (
+          <>
+            <input type="radio" name={props.state} value={shuffled[2]} />
+            <label htmlFor={shuffled[2]}>
+              {shuffled[2]
+                .replace(/&quot;/g, '"')
+                .replace(/&#039;/g, '´')
+                .replace(/&eacute;/g, 'é')}
+            </label>
+          </>
+        )}
+        {shuffled[3] && (
+          <>
+            <input type="radio" name={props.state} value={shuffled[3]} />
+            <label htmlFor={shuffled[3]}>
+              {shuffled[3]
+                .replace(/&quot;/g, '"')
+                .replace(/&#039;/g, '´')
+                .replace(/&eacute;/g, 'é')}
+            </label>
+          </>
+        )}
       </div>
     </div>
   );
 }
-
-// Math.floor(Math.random() * 3

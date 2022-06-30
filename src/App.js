@@ -1,18 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Questions from './Components/Questions';
 import Quizzical from './Components/Quizzical';
 
 function App() {
   const [quiz, setQuiz] = useState([]);
+  const [userAnswer, setUserAnswer] = useState({
+    answer1: '',
+    answer2: '',
+    answer3: '',
+    answer4: '',
+  });
 
-  useEffect(function () {
+  const handleClick = () => {
     fetch('https://opentdb.com/api.php?amount=5')
       .then((res) => res.json())
       .then((data) => setQuiz(data.results));
-  }, []);
+  };
 
-  console.log(quiz[0]);
+  console.log(Object.keys(userAnswer)[0]);
 
   const questionarie = quiz.map((question) => {
     return (
@@ -21,6 +27,7 @@ function App() {
         incorrect={question.incorrect_answers}
         correct={question.correct_answer}
         key={question.id}
+        state={Object.keys(userAnswer)[0]}
       />
     );
   });
@@ -34,7 +41,7 @@ function App() {
         </main>
       ) : (
         <main>
-          <Quizzical />
+          <Quizzical handleClick={handleClick} />
         </main>
       )}
     </div>

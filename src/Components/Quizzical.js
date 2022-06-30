@@ -1,9 +1,9 @@
-export default function Quizzical() {
+export default function Quizzical(props) {
   return (
     <div>
       <h1>Quizzical</h1>
       <h2>Lorem ipsum dolor</h2>
-      <button>Start Quiz</button>
+      <button onClick={props.handleClick}>Start Quiz</button>
     </div>
   );
 }
