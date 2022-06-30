@@ -1,9 +1,13 @@
+import React, { useState, useEffect } from 'react';
+
 export default function Questions(props) {
   const answers = [...props.incorrect, props.correct];
   let shuffled = answers
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
+
+  const [randomArray, setRandomArray] = useState(shuffled);
 
   return (
     <div className="question-container">
@@ -14,38 +18,58 @@ export default function Questions(props) {
           .replace(/&eacute;/g, 'é')}
       </h2>
       <div className="answers">
-        <input type="radio" name={props.state} value={shuffled[0]} />
-        <label htmlFor={shuffled[0]}>
-          {shuffled[0]
+        <input
+          type="radio"
+          name={props.userAnswer}
+          value={randomArray[0]}
+          onChange={props.handleChange}
+        />
+        <label htmlFor={randomArray[0]}>
+          {randomArray[0]
             .replace(/&quot;/g, '"')
             .replace(/&#039;/g, '´')
             .replace(/&eacute;/g, 'é')}
         </label>
 
-        <input type="radio" name={props.state} value={shuffled[1]} />
-        <label htmlFor={shuffled[1]}>
-          {shuffled[1]
+        <input
+          type="radio"
+          name={props.userAnswer}
+          value={randomArray[1]}
+          onChange={props.handleChange}
+        />
+        <label htmlFor={randomArray[1]}>
+          {randomArray[1]
             .replace(/&quot;/g, '"')
             .replace(/&#039;/g, '´')
             .replace(/&eacute;/g, 'é')}
         </label>
 
-        {shuffled[2] && (
+        {randomArray[2] && (
           <>
-            <input type="radio" name={props.state} value={shuffled[2]} />
-            <label htmlFor={shuffled[2]}>
-              {shuffled[2]
+            <input
+              type="radio"
+              name={props.userAnswer}
+              value={randomArray[2]}
+              onChange={props.handleChange}
+            />
+            <label htmlFor={randomArray[2]}>
+              {randomArray[2]
                 .replace(/&quot;/g, '"')
                 .replace(/&#039;/g, '´')
                 .replace(/&eacute;/g, 'é')}
             </label>
           </>
         )}
-        {shuffled[3] && (
+        {randomArray[3] && (
           <>
-            <input type="radio" name={props.state} value={shuffled[3]} />
-            <label htmlFor={shuffled[3]}>
-              {shuffled[3]
+            <input
+              type="radio"
+              name={props.userAnswer}
+              value={randomArray[3]}
+              onChange={props.handleChange}
+            />
+            <label htmlFor={randomArray[3]}>
+              {randomArray[3]
                 .replace(/&quot;/g, '"')
                 .replace(/&#039;/g, '´')
                 .replace(/&eacute;/g, 'é')}
