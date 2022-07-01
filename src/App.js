@@ -14,6 +14,11 @@ function App() {
     answer4: '',
     answer5: '',
   });
+  const [isDisabled, setIsDisabled] = useState(false);
+
+  const handleDisable = () => {
+    setIsDisabled(!isDisabled);
+  };
 
   const handleClick = () => {
     fetch('https://opentdb.com/api.php?amount=5')
@@ -33,6 +38,7 @@ function App() {
 
   const endQuiz = () => {
     setQuizDone((prevQuizDone) => !prevQuizDone);
+    handleDisable();
     showScore();
   };
 
@@ -48,6 +54,7 @@ function App() {
   };
 
   const reset = () => {
+    handleDisable();
     setCorrectAnswer(0);
     setQuizDone(false);
     setUserAnswer({
@@ -74,6 +81,7 @@ function App() {
               key={quiz[0].id}
               userAnswer={Object.keys(userAnswer)[0]}
               handleChange={handleChange}
+              handleDisable={isDisabled}
             />
             <Questions
               question={quiz[1].question}
@@ -82,6 +90,7 @@ function App() {
               key={quiz[1].id}
               userAnswer={Object.keys(userAnswer)[1]}
               handleChange={handleChange}
+              handleDisable={isDisabled}
             />
             <Questions
               question={quiz[2].question}
@@ -90,6 +99,7 @@ function App() {
               key={quiz[2].id}
               userAnswer={Object.keys(userAnswer)[2]}
               handleChange={handleChange}
+              handleDisable={isDisabled}
             />
             <Questions
               question={quiz[3].question}
@@ -98,6 +108,7 @@ function App() {
               key={quiz[3].id}
               userAnswer={Object.keys(userAnswer)[3]}
               handleChange={handleChange}
+              handleDisable={isDisabled}
             />
             <Questions
               question={quiz[4].question}
@@ -106,6 +117,7 @@ function App() {
               key={quiz[4].id}
               userAnswer={Object.keys(userAnswer)[4]}
               handleChange={handleChange}
+              handleDisable={isDisabled}
             />
           </div>
           <div className="check-btn-cont">

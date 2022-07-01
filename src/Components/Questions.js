@@ -24,6 +24,7 @@ export default function Questions(props) {
             name={props.userAnswer}
             value={randomArray[0]}
             onChange={props.handleChange}
+            disabled={props.handleDisable}
           />
           <label htmlFor={randomArray[0]}>
             {randomArray[0]
@@ -38,6 +39,7 @@ export default function Questions(props) {
             name={props.userAnswer}
             value={randomArray[1]}
             onChange={props.handleChange}
+            disabled={props.handleDisable}
           />
           <label htmlFor={randomArray[1]}>
             {randomArray[1]
@@ -53,6 +55,7 @@ export default function Questions(props) {
               name={props.userAnswer}
               value={randomArray[2]}
               onChange={props.handleChange}
+              disabled={props.handleDisable}
             />
             <label htmlFor={randomArray[2]}>
               {randomArray[2]
@@ -69,6 +72,7 @@ export default function Questions(props) {
               name={props.userAnswer}
               value={randomArray[3]}
               onChange={props.handleChange}
+              disabled={props.handleDisable}
             />
             <label htmlFor={randomArray[3]}>
               {randomArray[3]

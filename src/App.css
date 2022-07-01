@@ -79,6 +79,7 @@
   z-index: 100;
   width: 100px;
   height: 40px;
+  margin: 0;
 }
 
 .buttons input[type='radio']:checked + label {
@@ -88,6 +89,7 @@
 }
 
 .buttons label {
+  width: 100px;
   cursor: pointer;
   z-index: 90;
   line-height: 1.8em;
