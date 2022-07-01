@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export default function Questions(props) {
   const answers = [...props.incorrect, props.correct];
@@ -18,34 +18,36 @@ export default function Questions(props) {
           .replace(/&eacute;/g, 'é')}
       </h2>
       <div className="answers">
-        <input
-          type="radio"
-          name={props.userAnswer}
-          value={randomArray[0]}
-          onChange={props.handleChange}
-        />
-        <label htmlFor={randomArray[0]}>
-          {randomArray[0]
-            .replace(/&quot;/g, '"')
-            .replace(/&#039;/g, '´')
-            .replace(/&eacute;/g, 'é')}
-        </label>
-
-        <input
-          type="radio"
-          name={props.userAnswer}
-          value={randomArray[1]}
-          onChange={props.handleChange}
-        />
-        <label htmlFor={randomArray[1]}>
-          {randomArray[1]
-            .replace(/&quot;/g, '"')
-            .replace(/&#039;/g, '´')
-            .replace(/&eacute;/g, 'é')}
-        </label>
-
+        <div className="buttons">
+          <input
+            type="radio"
+            name={props.userAnswer}
+            value={randomArray[0]}
+            onChange={props.handleChange}
+          />
+          <label htmlFor={randomArray[0]}>
+            {randomArray[0]
+              .replace(/&quot;/g, '"')
+              .replace(/&#039;/g, '´')
+              .replace(/&eacute;/g, 'é')}
+          </label>
+        </div>
+        <div className="buttons">
+          <input
+            type="radio"
+            name={props.userAnswer}
+            value={randomArray[1]}
+            onChange={props.handleChange}
+          />
+          <label htmlFor={randomArray[1]}>
+            {randomArray[1]
+              .replace(/&quot;/g, '"')
+              .replace(/&#039;/g, '´')
+              .replace(/&eacute;/g, 'é')}
+          </label>
+        </div>
         {randomArray[2] && (
-          <>
+          <div className="buttons">
             <input
               type="radio"
               name={props.userAnswer}
@@ -58,10 +60,10 @@ export default function Questions(props) {
                 .replace(/&#039;/g, '´')
                 .replace(/&eacute;/g, 'é')}
             </label>
-          </>
+          </div>
         )}
         {randomArray[3] && (
-          <>
+          <div className="buttons">
             <input
               type="radio"
               name={props.userAnswer}
@@ -74,9 +76,10 @@ export default function Questions(props) {
                 .replace(/&#039;/g, '´')
                 .replace(/&eacute;/g, 'é')}
             </label>
-          </>
+          </div>
         )}
       </div>
+      <hr className="line" />
     </div>
   );
 }

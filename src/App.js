@@ -92,7 +92,7 @@ function App() {
               handleChange={handleChange}
             />
           </div>
-          <button>Check answers</button>
+          <button className="check-btn">Check answers</button>
         </main>
       ) : (
         <main>
