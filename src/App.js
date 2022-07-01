@@ -4,6 +4,8 @@ import Questions from './Components/Questions';
 import Quizzical from './Components/Quizzical';
 
 function App() {
+  const [correctAnswer, setCorrectAnswer] = useState(0);
+  const [quizDone, setQuizDone] = useState(false);
   const [quiz, setQuiz] = useState([]);
   const [userAnswer, setUserAnswer] = useState({
     answer1: '',
@@ -19,7 +21,7 @@ function App() {
       .then((data) => setQuiz(data.results));
   };
 
-  function handleChange(event) {
+  const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
     setUserAnswer((prevAnswer) => {
       return {
@@ -27,24 +29,38 @@ function App() {
         [name]: type === 'checkbox' ? checked : value,
       };
     });
-  }
+  };
+
+  const endQuiz = () => {
+    setQuizDone((prevQuizDone) => !prevQuizDone);
+    showScore();
+  };
+
+  const showScore = () => {
+    let correctCount = 0;
+    for (let i = 0; i < quiz.length; i++) {
+      if (quiz[i].correct_answer === Object.values(userAnswer)[i]) {
+        correctCount += 1;
+      }
+    }
+
+    setCorrectAnswer(correctCount);
+  };
+
+  const reset = () => {
+    setCorrectAnswer(0);
+    setQuizDone(false);
+    setUserAnswer({
+      answer1: '',
+      answer2: '',
+      answer3: '',
+      answer4: '',
+      answer5: '',
+    });
+    setQuiz([]);
+  };
 
   console.log(userAnswer);
-
-  // const questionarie = quiz.map((question) => {
-  //   return (
-  //     <Questions
-  //       question={question.question}
-  //       incorrect={question.incorrect_answers}
-  //       correct={question.correct_answer}
-  //       key={question.id}
-  //       userAnswer1={Object.keys(userAnswer)[0]}
-  //       userAnswer2={Object.keys(userAnswer)[1]}
-  //       userAnswer3={Object.keys(userAnswer)[2]}
-  //       userAnswer4={Object.keys(userAnswer)[3]}
-  //     />
-  //   );
-  // });
 
   return (
     <div className="App">
@@ -92,7 +108,14 @@ function App() {
               handleChange={handleChange}
             />
           </div>
-          <button className="check-btn">Check answers</button>
+          <div className="check-btn-cont">
+            {quizDone === true && (
+              <p>You scored {correctAnswer} of 5 correct answers</p>
+            )}
+            <button className="check-btn" onClick={quizDone ? reset : endQuiz}>
+              {quizDone ? 'Play Again' : 'Check answers'}
+            </button>
+          </div>
         </main>
       ) : (
         <main>
