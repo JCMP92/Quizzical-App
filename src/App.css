@@ -68,7 +68,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border: 0.794239px solid #4d5b9e;
+  border: 0.8px solid #4d5b9e;
   border-radius: 7.94239px;
 
   cursor: pointer;
@@ -130,4 +130,21 @@ h2 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background: #8190dd;
+  height: 1px;
+}
+
+.score {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12.8px;
+  color: #293264;
 }

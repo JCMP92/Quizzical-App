@@ -82,6 +82,7 @@ function App() {
               userAnswer={Object.keys(userAnswer)[0]}
               handleChange={handleChange}
               handleDisable={isDisabled}
+              quizDone={quizDone}
             />
             <Questions
               question={quiz[1].question}
@@ -91,6 +92,7 @@ function App() {
               userAnswer={Object.keys(userAnswer)[1]}
               handleChange={handleChange}
               handleDisable={isDisabled}
+              quizDone={quizDone}
             />
             <Questions
               question={quiz[2].question}
@@ -100,6 +102,7 @@ function App() {
               userAnswer={Object.keys(userAnswer)[2]}
               handleChange={handleChange}
               handleDisable={isDisabled}
+              quizDone={quizDone}
             />
             <Questions
               question={quiz[3].question}
@@ -109,6 +112,7 @@ function App() {
               userAnswer={Object.keys(userAnswer)[3]}
               handleChange={handleChange}
               handleDisable={isDisabled}
+              quizDone={quizDone}
             />
             <Questions
               question={quiz[4].question}
@@ -118,11 +122,14 @@ function App() {
               userAnswer={Object.keys(userAnswer)[4]}
               handleChange={handleChange}
               handleDisable={isDisabled}
+              quizDone={quizDone}
             />
           </div>
           <div className="check-btn-cont">
             {quizDone === true && (
-              <p>You scored {correctAnswer} of 5 correct answers</p>
+              <p className="score">
+                You scored {correctAnswer} of 5 correct answers
+              </p>
             )}
             <button className="check-btn" onClick={quizDone ? reset : endQuiz}>
               {quizDone ? 'Play Again' : 'Check answers'}

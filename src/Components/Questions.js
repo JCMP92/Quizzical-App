@@ -26,7 +26,19 @@ export default function Questions(props) {
             onChange={props.handleChange}
             disabled={props.handleDisable}
           />
-          <label htmlFor={randomArray[0]}>
+          <label
+            htmlFor={randomArray[0]}
+            style={{
+              borderColor:
+                props.quizDone && randomArray[0] === props.correct
+                  ? 'orange'
+                  : '#4d5b9e',
+              borderWidth:
+                props.quizDone && randomArray[0] === props.correct
+                  ? '3px'
+                  : '0.8px',
+            }}
+          >
             {randomArray[0]
               .replace(/&quot;/g, '"')
               .replace(/&#039;/g, '´')
@@ -41,7 +53,19 @@ export default function Questions(props) {
             onChange={props.handleChange}
             disabled={props.handleDisable}
           />
-          <label htmlFor={randomArray[1]}>
+          <label
+            htmlFor={randomArray[1]}
+            style={{
+              borderColor:
+                props.quizDone && randomArray[1] === props.correct
+                  ? 'orange'
+                  : '#4d5b9e',
+              borderWidth:
+                props.quizDone && randomArray[1] === props.correct
+                  ? '3px'
+                  : '0.8px',
+            }}
+          >
             {randomArray[1]
               .replace(/&quot;/g, '"')
               .replace(/&#039;/g, '´')
@@ -57,7 +81,19 @@ export default function Questions(props) {
               onChange={props.handleChange}
               disabled={props.handleDisable}
             />
-            <label htmlFor={randomArray[2]}>
+            <label
+              htmlFor={randomArray[2]}
+              style={{
+                borderColor:
+                  props.quizDone && randomArray[2] === props.correct
+                    ? 'orange'
+                    : '#4d5b9e',
+                borderWidth:
+                  props.quizDone && randomArray[2] === props.correct
+                    ? '3px'
+                    : '0.8px',
+              }}
+            >
               {randomArray[2]
                 .replace(/&quot;/g, '"')
                 .replace(/&#039;/g, '´')
@@ -74,7 +110,19 @@ export default function Questions(props) {
               onChange={props.handleChange}
               disabled={props.handleDisable}
             />
-            <label htmlFor={randomArray[3]}>
+            <label
+              htmlFor={randomArray[3]}
+              style={{
+                borderColor:
+                  props.quizDone && randomArray[3] === props.correct
+                    ? 'orange'
+                    : '#4d5b9e',
+                borderWidth:
+                  props.quizDone && randomArray[3] === props.correct
+                    ? '3px'
+                    : '0.8px',
+              }}
+            >
               {randomArray[3]
                 .replace(/&quot;/g, '"')
                 .replace(/&#039;/g, '´')

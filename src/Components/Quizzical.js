@@ -1,9 +1,12 @@
+import '../Quizzical.css';
 export default function Quizzical(props) {
   return (
-    <div>
-      <h1>Quizzical</h1>
-      <h2>Lorem ipsum dolor</h2>
-      <button onClick={props.handleClick}>Start Quiz</button>
+    <div className="qzcl-container">
+      <h1 className="qzcl-name">Quizzical</h1>
+      <h2 className="qzcl-sub">Do you really know?</h2>
+      <button className="qzcl-btn" onClick={props.handleClick}>
+        Start Quiz
+      </button>
     </div>
   );
 }
