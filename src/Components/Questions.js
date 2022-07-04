@@ -11,12 +11,14 @@ export default function Questions(props) {
 
   return (
     <div className="question-container">
-      <h2>
-        {props.question
-          .replace(/&quot;/g, '"')
-          .replace(/&#039;/g, '´')
-          .replace(/&eacute;/g, 'é')}
-      </h2>
+      <div className="question-title">
+        <h2>
+          {props.question
+            .replace(/&quot;/g, '"')
+            .replace(/&#039;/g, '´')
+            .replace(/&eacute;/g, 'é')}
+        </h2>
+      </div>
       <div className="answers">
         <div className="buttons">
           <input
