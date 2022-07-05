@@ -1,10 +1,36 @@
-# Getting Started with Create React App
+# QUIZZICAL random quiz :thought_balloon: :question:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This project is last solo challenge of the Bob Ziroll´s React course on Scrimba.
 
-In the project directory, you can run:
+## :computer: The Project Brief
+
+The goal of this project is to create a web application that shows the user a series of random questions with multiple answers, allowing them to chose between 4 different answers, and showing them if the options they choose were correct :heavy_check_mark: or not :x:.
+
+## :bulb: Technologies & Languages Used
+
+- React
+- React-DOM
+- React-Create-App
+- npm
+- CSS
+- ES6
+
+## :fireworks: Live version
+
+Are you ready for a quiz:question: [quizzical][1] 
+
+[1]: https://quizzical-juandev.netlify.app/
+
+## :v::jack_o_lantern: Creator
+
+Juan Montes-Pesquera - [Github][2].
+
+[2]:  https://github.com/JCMP92/
+
+
+## In the project directory, you can run:
 
 ### `npm start`
 
@@ -39,32 +65,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
