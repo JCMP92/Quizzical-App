@@ -29,6 +29,10 @@ Juan Montes-Pesquera - [Github][2].
 
 [2]:  https://github.com/JCMP92/
 
+## Show Your Support:exclamation:
+
+Give a :star: if you like this project!
+
 
 ## In the project directory, you can run:
 
